@@ -48,7 +48,7 @@
             <td >{{cadastro.dataCadastro}}</td>
             <td >{{cadastro.dataSituacao}}</td>
             <td >{{cadastro.situacao}}</td>
-            <td class="col-data" [style.color]="cadastro.viabilidade === 'MEDIA' ? 'red' : 'blue'">{{cadastro.viabilidade}}</td>
+            <td class="col-data" [style.color]="cadastro.viabilidade === 'MEDIA' ? 'red' : 'black'">{{cadastro.viabilidade}}</td>
             <td class="centralizar">
               <button pButton class="tamanho" style="margin-right: 15px;" pTooltip="Editar" tooltipPosition="top"><fa-icon [icon]="faPen" ></fa-icon></button>
               <button pButton class="tamanho" pTooltip="Excluir" tooltipPosition="top"><fa-icon [icon]="faTrash" ></fa-icon></button>
