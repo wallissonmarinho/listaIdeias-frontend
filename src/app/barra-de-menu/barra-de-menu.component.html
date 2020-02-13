@@ -1,0 +1,13 @@
+<nav class="navbar">
+    <div class="container">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <a href="#" class="menu-cor" (click)="ExibirMenu(exibirMenu = !exibirMenu)"><i><fa-icon [icon]="faBars" ></fa-icon></i></a>
+            </div>
+        </div>
+    </div>
+    <ul class="barra-menu" [hidden]="ExibirMenu(!exibirMenu)">
+        <li class="barra-usuario">teste</li>
+        <li class="menu-item"><a href="#">Cadastros</a></li>
+    </ul>
+</nav>

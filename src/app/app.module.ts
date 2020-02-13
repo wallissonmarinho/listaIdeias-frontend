@@ -11,11 +11,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CadastrosPesquisaComponent } from './cadastros-pesquisa/cadastros-pesquisa.component';
+import { BarraDeMenuComponent } from './barra-de-menu/barra-de-menu.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CadastrosPesquisaComponent,
+    BarraDeMenuComponent
   ],
   imports: [
     BrowserModule,
