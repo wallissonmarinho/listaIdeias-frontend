@@ -9,7 +9,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 })
 export class BarraDeMenuComponent implements OnInit {
 
-  menu = false;
+  menu: boolean;
 
   faBars = faBars;
 
