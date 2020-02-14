@@ -7,17 +7,17 @@
                 <h1>Novo Cadastro</h1>
             </div>
 
-            <div class="ui-g-6 ui-fluid">
+            <div class="ui-g-6 ui-md-12 ui-fluid">
                 <label for="">Nome</label>
                 <input pInputText type="text">
             </div>
-            <div class="ui-g-6 ui-fluid">
+            <div class="ui-g-3 ui-fluid">
                 <label for="">Viabilidade</label>
-                <input pInputText type="text">
+                <p-dropdown [options]="viabilidade"></p-dropdown>
             </div>
-            <div class="ui-g-6 ui-fluid">
+            <div class="ui-g-3 ui-fluid">
                 <label for="">Situação</label>
-                <input pInputText type="text">
+                <p-dropdown [options]="situacao"></p-dropdown>
             </div>
             <div class="ui-g-12 ui-fluid">
                 <label for="">Descrição</label>
