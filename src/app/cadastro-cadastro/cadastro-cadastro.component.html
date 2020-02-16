@@ -7,21 +7,28 @@
                 <h1>Novo Cadastro</h1>
             </div>
 
-            <div class="ui-g-6 ui-md-12 ui-fluid">
+            <div class="ui-g-12 ui-fluid">
                 <label for="">Nome</label>
                 <input pInputText type="text">
             </div>
-            <div class="ui-g-3 ui-fluid">
+            <div class="ui-g-6 ui-md-3 ui-fluid">
                 <label for="">Viabilidade</label>
                 <p-dropdown [options]="viabilidade"></p-dropdown>
             </div>
-            <div class="ui-g-3 ui-fluid">
+            <div class="ui-g-6 ui-md-3 ui-fluid">
                 <label for="">Situação</label>
                 <p-dropdown [options]="situacao"></p-dropdown>
             </div>
             <div class="ui-g-12 ui-fluid">
-                <label for="">Descrição</label>
-                <input pInputText type="text">
+                <label for="">Descrição {{ descricao.errors | json }}</label>
+                <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" 
+                name="descricao" ngModel #descricao="ngModel" required minlength="5"></textarea>
+                <div *ngIf="descricao.hasError('required') && descricao.dirty" class="ui-message ui-messages-error">
+                    Informe uma descrição
+                </div>
+                <div *ngIf="descricao.hasError('minlength') && descricao.dirty" class="ui-message ui-messages-error">
+                    Minimo de 5 caracteres
+                </div>
             </div>
         </div>
 

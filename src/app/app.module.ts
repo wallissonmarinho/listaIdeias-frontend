@@ -1,3 +1,5 @@
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -36,7 +38,9 @@ import { CadastroCadastroComponent } from './cadastro-cadastro/cadastro-cadastro
     FontAwesomeModule,
     TooltipModule,
     DropdownModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    InputTextareaModule
   ],
   providers: [],
   bootstrap: [AppComponent],
