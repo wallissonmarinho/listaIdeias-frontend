@@ -1,3 +1,4 @@
+import { CadastroModule } from './cadastro/cadastro.module';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,17 +17,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CadastrosPesquisaComponent } from './cadastros-pesquisa/cadastros-pesquisa.component';
 import { BarraDeMenuComponent } from './barra-de-menu/barra-de-menu.component';
-import { CadastroCadastroComponent } from './cadastro-cadastro/cadastro-cadastro.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CadastrosPesquisaComponent,
-    BarraDeMenuComponent,
-    CadastroCadastroComponent
+    BarraDeMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +37,8 @@ import { CadastroCadastroComponent } from './cadastro-cadastro/cadastro-cadastro
     DropdownModule,
     BrowserAnimationsModule,
     FormsModule,
-    InputTextareaModule
+    InputTextareaModule,
+    CadastroModule
   ],
   providers: [],
   bootstrap: [AppComponent],

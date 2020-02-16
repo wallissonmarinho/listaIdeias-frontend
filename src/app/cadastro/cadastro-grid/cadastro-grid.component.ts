@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-
-import { AppService } from '../app.service';
-
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { AppService } from 'src/app/app.service';
 
 @Component({
-  selector: 'app-cadastros-pesquisa',
-  templateUrl: './cadastros-pesquisa.component.html',
-  styleUrls: ['./cadastros-pesquisa.component.css']
+  selector: 'app-cadastro-grid',
+  templateUrl: './cadastro-grid.component.html',
+  styleUrls: ['./cadastro-grid.component.css']
 })
-export class CadastrosPesquisaComponent implements OnInit {
+export class CadastroGridComponent implements OnInit {
 
   faPen = faPen;
   faTrash = faTrash;
@@ -22,4 +20,5 @@ export class CadastrosPesquisaComponent implements OnInit {
     this.service.listar()
       .subscribe(resposta => this.cadastros = resposta);
   }
+
 }
