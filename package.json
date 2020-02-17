@@ -25,11 +25,15 @@
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@ngtools/webpack": "git+https://github.com/angular/ngtools-webpack-builds.git",
     "font-awesome": "^4.7.0",
+    "moment": "^2.24.0",
+    "ng2-toasty": "^4.0.3",
     "primeicons": "^2.0.0",
     "primeng": "^9.0.0-rc.4",
     "rxjs": "~6.5.4",
+    "rxjs-compat": "^6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
+    "zone": "^0.3.4",
+    "zone.js": "^0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.2",

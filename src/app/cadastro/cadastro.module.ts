@@ -12,15 +12,13 @@ import { DropdownModule } from 'primeng/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import { CadastroGridComponent } from './cadastro-grid/cadastro-grid.component';
 
 
 
 @NgModule({
   declarations: [
     CadastroCadastroComponent,
-    CadastrosPesquisaComponent,
-    CadastroGridComponent
+    CadastrosPesquisaComponent
   ],
   exports: [
     CadastroCadastroComponent,
