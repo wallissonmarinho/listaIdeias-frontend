@@ -30,7 +30,6 @@ import { BarraDeMenuComponent } from './barra-de-menu/barra-de-menu.component';
     CadastroModule,
     ToastyModule.forRoot(),
     ConfirmDialogModule
-    
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent],

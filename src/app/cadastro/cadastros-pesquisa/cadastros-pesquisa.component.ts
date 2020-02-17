@@ -79,8 +79,8 @@ export class CadastrosPesquisaComponent implements OnInit {
     this.service.excluir(cadastro.id)
       .then(() => {
         console.log('excluido');
-        this.toasty.success('Ideia excluida com sucesso!');
         this.pesquisar();
+        this.toasty.success('Ideia excluida com sucesso!');
       });
   }
 
