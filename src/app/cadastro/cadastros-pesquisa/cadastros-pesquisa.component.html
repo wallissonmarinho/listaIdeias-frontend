@@ -50,12 +50,8 @@
             <td class="col-data" [style.color]="cadastro.viabilidade === 'MEDIA' ? 'red' : 'black'">
               {{cadastro.viabilidade}}</td>
             <td class="centralizar">
-              <button pButton class="tamanho" style="margin-right: 15px;" pTooltip="Editar" tooltipPosition="top">
-                <fa-icon [icon]="faPen"></fa-icon>
-              </button>
-              <button pButton class="tamanho" pTooltip="Excluir" tooltipPosition="top" (click)="excluir(cadastro)">
-                <fa-icon [icon]="faTrash"></fa-icon>
-              </button>
+              <button pButton icon="pi pi-pencil"  pTooltip="Editar" style="margin-right: 10px;" tooltipPosition="top"></button>
+              <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top" (click)="confirmarExclusao(cadastro)"></button>
             </td>
         </ng-template>
 

@@ -7,6 +7,9 @@ import {CUSTOM_ELEMENTS_SCHEMA} from "@angular/core";
 
 import { CadastroModule } from './cadastro/cadastro.module';
 
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
+
 import { ToastyModule } from 'ng2-toasty';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,10 +28,13 @@ import { BarraDeMenuComponent } from './barra-de-menu/barra-de-menu.component';
     AppRoutingModule,
     HttpClientModule,
     CadastroModule,
-    ToastyModule.forRoot()
+    ToastyModule.forRoot(),
+    ConfirmDialogModule
+    
   ],
-  providers: [],
+  providers: [ConfirmationService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
+
 export class AppModule { }
