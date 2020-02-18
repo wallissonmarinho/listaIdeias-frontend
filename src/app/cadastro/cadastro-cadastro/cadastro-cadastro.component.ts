@@ -37,6 +37,24 @@ export class CadastroCadastroComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.rota.snapshot.params['id']);
+
+    const idCadastro = this.rota.snapshot.params['id'];
+
+    if (idCadastro) {
+      this.carregarCadastro(idCadastro);
+    }
+  }
+
+  get editando() {
+    return Boolean(this.cadastrar.id);
+  }
+
+  carregarCadastro(id: number) {
+    this.service.buscarPorId(id)
+    .then(cadastrar => {
+      this.cadastrar = cadastrar;
+      console.log(this.cadastrar);
+    });
   }
 
   salvar(form: NgForm) {

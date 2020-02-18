@@ -34,6 +34,12 @@ export class AppService  {
             .then(resposta => resposta);
     }
 
+    buscarPorId(id: number): Promise<any> {
+        return this.http.get(`${this.cadastroUrl}/${id}`)
+        .toPromise()
+        .then(resposta => resposta);
+    }
+
     excluir(id: number): Promise<void> {
         return this.http.delete(`${this.cadastroUrl}/${id}`)
         .toPromise()
