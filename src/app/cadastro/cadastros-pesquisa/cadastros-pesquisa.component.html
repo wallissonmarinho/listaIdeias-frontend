@@ -50,7 +50,7 @@
             <td class="col-data" [style.color]="cadastro.viabilidade === 'MEDIA' ? 'red' : 'black'">
               {{cadastro.viabilidade}}</td>
             <td class="centralizar">
-              <button pButton icon="pi pi-pencil"  pTooltip="Editar" style="margin-right: 10px;" tooltipPosition="top"></button>
+              <button pButton icon="pi pi-pencil"  pTooltip="Editar" style="margin-right: 10px;" tooltipPosition="top" [routerLink]="['/ideias', cadastro.id]"></button>
               <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top" (click)="confirmarExclusao(cadastro)"></button>
             </td>
         </ng-template>

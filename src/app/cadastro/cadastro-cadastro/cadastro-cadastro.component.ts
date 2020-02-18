@@ -4,6 +4,7 @@ import { Cadastrar } from '../model';
 import { NgForm } from '@angular/forms';
 import * as moment from 'moment';
 import { ToastyService } from 'ng2-toasty';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-cadastro',
@@ -29,9 +30,13 @@ export class CadastroCadastroComponent implements OnInit {
 
   cadastrar = new Cadastrar();
 
-  constructor(private service: AppService, private toasty: ToastyService) { }
+  constructor(private service: AppService,
+              private toasty: ToastyService,
+              private rota: ActivatedRoute
+     ) { }
 
   ngOnInit(): void {
+    console.log(this.rota.snapshot.params['id']);
   }
 
   salvar(form: NgForm) {

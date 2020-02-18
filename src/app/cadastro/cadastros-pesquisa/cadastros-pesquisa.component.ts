@@ -43,7 +43,10 @@ export class CadastrosPesquisaComponent implements OnInit {
 
   cadastros: Array<any>;
 
-  constructor(private service: AppService, private toasty: ToastyService, private confirmationService: ConfirmationService) { }
+  constructor(private service: AppService,
+              private toasty: ToastyService,
+              private confirmationService: ConfirmationService,
+  ) { }
 
   ngOnInit() {
     this.pesquisar();
