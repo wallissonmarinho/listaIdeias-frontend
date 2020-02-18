@@ -1,4 +1,9 @@
+import { AppService } from './../../app.service';
 import { Component, OnInit } from '@angular/core';
+import { Cadastrar } from '../model';
+import { NgForm } from '@angular/forms';
+import * as moment from 'moment';
+import { ToastyService } from 'ng2-toasty';
 
 @Component({
   selector: 'app-cadastro-cadastro',
@@ -16,15 +21,29 @@ export class CadastroCadastroComponent implements OnInit {
   ];
 
   situacao = [
-    { label: 'Registrada', value: 'Registrada' },
-    { label: 'Em Desenvolvimento', value: 'Em Desenvolvimento' },
-    { label: 'Cancelada', value: 'Cancelada' },
-    { label: 'Desenvolvida', value: 'Desenvolvida' },
+    { label: 'Registrada', value: 'REGISTRADA' },
+    { label: 'Em Desenvolvimento', value: 'DESENVOLVIMENTO' },
+    { label: 'Cancelada', value: 'CANCELADA' },
+    { label: 'Desenvolvida', value: 'DESENVOLVIDA' },
   ];
 
-  constructor() { }
+  cadastrar = new Cadastrar();
+
+  constructor(private service: AppService, private toasty: ToastyService) { }
 
   ngOnInit(): void {
+  }
+
+  salvar(form: NgForm) {
+    this.cadastrar.dataCadastro = moment().format('YYYY-MM-DD');
+
+    console.log(this.cadastrar);
+
+    this.service.adicionar(this.cadastrar)
+      .then(() => {
+        this.toasty.success('Cadastrado com sucesso!');
+        form.reset();
+      });
   }
 
 }

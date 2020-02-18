@@ -1,28 +1,30 @@
 <div class="container">
 
-    <form >
+    <form (ngSubmit)="salvar(fForm)" #fForm="ngForm">
 
         <div class="ui-g">
             <div class="ui-g-12">
                 <h1>Novo Cadastro</h1>
             </div>
 
-            <div class="ui-g-12 ui-fluid">
-                <label for="">Nome</label>
-                <input pInputText type="text">
+            <div class="ui-g-12 ui-fluid form-group">
+                <label lass="form-control-label">Nome</label>
+                <input pInputText type="text" name="nome2" [(ngModel)]="cadastrar.nome">
             </div>
-            <div class="ui-g-6 ui-md-3 ui-fluid">
-                <label for="">Viabilidade</label>
-                <p-dropdown [options]="viabilidade"></p-dropdown>
+            <div class="ui-g-6 ui-md-3 ui-fluid form-group">
+                <label lass="form-control-label">Viabilidade</label>
+                <p-dropdown [options]="viabilidade" required placeholder="Selecione" name="viabilidade2" [(ngModel)]="cadastrar.viabilidade">
+                </p-dropdown>
             </div>
-            <div class="ui-g-6 ui-md-3 ui-fluid">
-                <label for="">Situação</label>
-                <p-dropdown [options]="situacao"></p-dropdown>
+            <div class="ui-g-6 ui-md-3 ui-fluid form-group">
+                <label lass="form-control-label">Situação</label>
+                <p-dropdown [options]="situacao" required placeholder="Selecione" name="situacao2" [(ngModel)]="cadastrar.situacao"></p-dropdown>
             </div>
-            <div class="ui-g-12 ui-fluid">
-                <label for="">Descrição {{ descricao.errors | json }}</label>
-                <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" 
-                name="descricao" ngModel #descricao="ngModel" required minlength="5"></textarea>
+            <div class="ui-g-12 ui-fluid form-group">
+                <label lass="form-control-label">Descrição</label>
+                <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" name="descricao" ngModel
+                    #descricao="ngModel" required minlength="5" [(ngModel)]="cadastrar.descricao"
+                    name="descricao2"></textarea>
                 <div *ngIf="descricao.hasError('required') && descricao.dirty" class="ui-message ui-messages-error">
                     Informe uma descrição
                 </div>
@@ -30,6 +32,12 @@
                     Minimo de 5 caracteres
                 </div>
             </div>
+            
+            <div class="ui-g-12">
+                <button pButton type="submit" label="Salvar" [disabled]="fForm.invalid" style="margin-right: 10px;"></button>
+                <button pButton type="button" label="Novo" class="ui-button-info" style="margin-right: 10px;"></button>
+                <a href="javascript:;">Voltar para a pesquisa</a>
+              </div>
         </div>
 
     </form>

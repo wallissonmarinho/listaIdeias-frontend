@@ -44,8 +44,8 @@
             <td>{{cadastro.id}}</td>
             <td>{{cadastro.nome}}</td>
             <td>{{cadastro.descricao}}</td>
-            <td>{{cadastro.dataCadastro}}</td>
-            <td>{{cadastro.dataSituacao}}</td>
+            <td class="col-data">{{cadastro.dataCadastro | date: 'dd/MM/yyyy'}}</td>
+            <td class="col-data">{{cadastro.dataSituacao | date: 'dd/MM/yyyy'}}</td>
             <td class="col-data">{{cadastro.situacao}}</td>
             <td class="col-data" [style.color]="cadastro.viabilidade === 'MEDIA' ? 'red' : 'black'">
               {{cadastro.viabilidade}}</td>

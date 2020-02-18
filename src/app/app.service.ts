@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { Cadastrar } from './cadastro/model';
 
 
 
@@ -39,9 +40,10 @@ export class AppService  {
         .then(() => null);
     }
 
-    criar(cadastro: any) {
-        return this.http.post(this.cadastroUrl, cadastro);
-    }
+    adicionar(cadastrar: Cadastrar): Promise<Cadastrar> {
+        return this.http.post<Cadastrar>(this.cadastroUrl, cadastrar)
+          .toPromise();
+      }
 }
 
 
