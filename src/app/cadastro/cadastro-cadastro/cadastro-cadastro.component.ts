@@ -31,9 +31,9 @@ export class CadastroCadastroComponent implements OnInit {
   cadastrar = new Cadastrar();
 
   constructor(private service: AppService,
-              private toasty: ToastyService,
-              private rota: ActivatedRoute
-     ) { }
+    private toasty: ToastyService,
+    private rota: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     console.log(this.rota.snapshot.params['id']);
@@ -51,14 +51,29 @@ export class CadastroCadastroComponent implements OnInit {
 
   carregarCadastro(id: number) {
     this.service.buscarPorId(id)
-    .then(cadastrar => {
-      this.cadastrar = cadastrar;
-      console.log(this.cadastrar);
-    });
+      .then(cadastrar => {
+        this.cadastrar = cadastrar;
+        console.log(this.cadastrar);
+      });
   }
 
   salvar(form: NgForm) {
+    if (this.editando) {
+      this.atualizarCadastro(form);
+    } else {
+      this.adicionarCadastro(form);
+    }
+  }
+
+  adicionarCadastro(form: NgForm) {
+
     this.cadastrar.dataCadastro = moment().format('YYYY-MM-DD');
+
+    if (this.cadastrar.situacao === 'DESENVOLVIDA' || this.cadastrar.situacao === 'CANCELADA') {
+      this.cadastrar.dataSituacao = moment().format('YYYY-MM-DD');
+    } else {
+      this.cadastrar.dataSituacao = '';
+    }
 
     console.log(this.cadastrar);
 
@@ -66,6 +81,20 @@ export class CadastroCadastroComponent implements OnInit {
       .then(() => {
         this.toasty.success('Cadastrado com sucesso!');
         form.reset();
+      });
+  }
+
+  atualizarCadastro(form: NgForm) {
+    if (this.cadastrar.situacao === 'DESENVOLVIDA' || this.cadastrar.situacao === 'CANCELADA') {
+      this.cadastrar.dataSituacao = moment().format('YYYY-MM-DD');
+    } else {
+      this.cadastrar.dataSituacao = '';
+    }
+
+    this.service.atualizar(this.cadastrar)
+      .then(cadastrar => {
+        this.cadastrar = cadastrar;
+        this.toasty.success('Atualizado com sucesso!');
       });
   }
 

@@ -5,5 +5,5 @@ export class Cadastrar {
     viabilidade: string;
     situacao: string;
     dataCadastro: string;
-    dataSituacao: Date;
+    dataSituacao: string;
 }

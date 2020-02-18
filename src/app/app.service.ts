@@ -49,7 +49,14 @@ export class AppService  {
     adicionar(cadastrar: Cadastrar): Promise<Cadastrar> {
         return this.http.post<Cadastrar>(this.cadastroUrl, cadastrar)
           .toPromise();
-      }
+    }
+
+    atualizar(cadastrar: Cadastrar): Promise<Cadastrar> {
+        return this.http.post<Cadastrar>(this.cadastroUrl, cadastrar)
+          .toPromise()
+          .then(resposta => resposta);
+    }
+
 }
 
 
