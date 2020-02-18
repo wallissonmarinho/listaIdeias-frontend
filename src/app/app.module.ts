@@ -20,6 +20,7 @@ import { CadastrosPesquisaComponent } from './cadastro/cadastros-pesquisa/cadast
 import { CadastroCadastroComponent } from './cadastro/cadastro-cadastro/cadastro-cadastro.component';
 
 const rotas: Routes = [
+  { path: '', redirectTo: 'ideias', pathMatch: 'full'},
   { path: 'ideias', component: CadastrosPesquisaComponent},
   { path: 'ideias/novo', component: CadastroCadastroComponent},
   { path: 'ideias/:id', component: CadastroCadastroComponent},
