@@ -1,4 +1,4 @@
-
+import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -14,8 +14,15 @@ import { ToastyModule } from 'ng2-toasty';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BarraDeMenuComponent } from './barra-de-menu/barra-de-menu.component';
 
+import { BarraDeMenuComponent } from './barra-de-menu/barra-de-menu.component';
+import { CadastrosPesquisaComponent } from './cadastro/cadastros-pesquisa/cadastros-pesquisa.component';
+import { CadastroCadastroComponent } from './cadastro/cadastro-cadastro/cadastro-cadastro.component';
+
+const rotas: Routes = [
+  { path: 'ideias', component: CadastrosPesquisaComponent},
+  { path: 'ideias/novo', component: CadastroCadastroComponent},
+];
 
 @NgModule({
   declarations: [
@@ -27,6 +34,7 @@ import { BarraDeMenuComponent } from './barra-de-menu/barra-de-menu.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    RouterModule.forRoot(rotas),
     CadastroModule,
     ToastyModule.forRoot(),
     ConfirmDialogModule

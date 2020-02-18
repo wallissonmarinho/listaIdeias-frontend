@@ -35,8 +35,8 @@
             
             <div class="ui-g-12">
                 <button pButton type="submit" label="Salvar" [disabled]="fForm.invalid" style="margin-right: 10px;"></button>
-                <button pButton type="button" label="Novo" class="ui-button-info" style="margin-right: 10px;"></button>
-                <a href="javascript:;">Voltar para a pesquisa</a>
+                <button pButton type="button" label="Limpar" (click)="fForm.reset()" class="ui-button-danger" style="margin-right: 10px;"></button>
+                <a routerLink="/ideias" >Voltar para a pesquisa</a>
               </div>
         </div>
 
